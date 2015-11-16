@@ -1,9 +1,3 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/simpleCart.min.js"> </script>
 </head>
 <body> 
+
 <!--header-->	
 <div class="header" >
 	<div class="top-header" >		
@@ -65,23 +60,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="search-top">
 				<div class="search">
 					<form>
-						<input type="text" value="search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'search';}" >
+						<input type="text" value="search about something ?" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'search about something ?';}" >
 						<input type="submit" value="" >
 					</form>
 				</div>
-				<div class="world" style="margin-right:-70px;">
-				    <% if(session.getAttribute("user") != null){ %>
-				    <p style="float:left; margin-right:20px; color:#FFFFFF;">Hi <% out.println(session.getAttribute("user")); %>!</p>
-				    <p style="float:left; margin-right:20px; color:#FFFFFF;">|</p>
-					<p style="float:left;"><a href="jsp/logout.jsp">Log Out</a></p>
-				    
-					<% }else
-					   { 
-					 %>
-					<p style="float:left; margin-right:20px;"><a href="html/login.html">Login</a></p>
-					<p style="float:left; margin-right:20px; color:#FFFFFF;">|</p>
-					<p style="float:left;"><a href="html/signup.html">Sign Up</a></p>
-					<%} %>
+				<div class="world">
+					<ul >
+						<li><a href="#"><span> </span></a> </li>
+						<li><select class="in-drop">
+							  <option>EN</option>
+							  <option>DE</option>
+							  <option>ES</option>
+							</select>
+						</li>
+					</ul>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -95,11 +87,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 		<div class="head-top">
 			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" alt="" ></a>
+				<a href="index.jsp"><img src="images/logo.png" alt="" ></a>
 			</div>
 		<div class="top-nav">		
 			  <ul class="megamenu skyblue">
-				      <li class="active grid"><a  href="#">fashion</a>
+				      <li class="active grid"><a  href="jsp/products.jsp?category=fashion">fashion</a>
 					    <div class="megapanel">
 						<div class="row">
 							<div class="col1">
@@ -155,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  </div>
 						</div>
 					</li>
-					<li><a   href="#">furniture & decor</a>
+					<li><a   href="jsp/products.jsp?category=furniture">furniture & decor</a>
 					 <div class="megapanel">
 						<div class="row">
 							<div class="col1">
@@ -192,12 +184,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>	
 								</div>							
 							</div>
-							<div class="col1">
-							<iframe src="https://player.vimeo.com/video/16878818"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-							</div>
 						  </div>
 						</div></li>
-				    <li class="grid"><a  href="#">mobiles & tablets</a>
+				    <li class="grid"><a  href="jsp/products.jsp?category=mobiles">mobiles & tablets</a>
 					   <div class="megapanel">
 						<div class="row">
 							<div class="col1">
@@ -234,66 +223,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>	
 								</div>							
 							</div>
-							<div class="col1">
-								<div class="col1">
-								<iframe src="https://player.vimeo.com/video/8118831"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-							</div>										
-							</div>
 						  </div>
 						</div>
 			    </li>
-						 <li class="grid"><a  href="health.html">health & beauty</a>
-					  
+						 <li class="grid"><a  href="health.html">health & beauty</a>					  
 			    </li>		
-				<li><a  href="#">tvs, gaming & cameras</a>
-				  <div class="megapanel">
-						<div class="row">
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="mobile.html">Lenovo Tablets</a></li>
-										<li><a href="mobile.html">Motorola</a></li>
-										<li><a href="mobile.html">Samsung </a></li>
-										<li><a href="mobile.html">Htc Tab</a></li>
-										<li><a href="mobile.html">Dell & Compaq</a></li>
-										<li><a href="mobile.html">Asus Tablets</a></li>
-										<li><a href="mobile.html">Microsoft</a></li>
-										<li><a href="mobile.html">Moto E & Moto G</a></li>
-										<li><a href="mobile.html">Intex</a></li>
-										<li><a href="mobile.html">Hauwei Lumia</a></li>
-										<li><a href="mobile.html">Loungewear</a></li>
-									</ul>	
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="mobile.html">Asus Zenfone 2</a></li>
-										<li><a href="mobile.html">Nikon & Sony</a></li>
-										<li><a href="mobile.html">Shorts</a></li>
-										<li><a href="mobile.html">Olymplus</a></li>
-										<li><a href="mobile.html">Sunglasses</a></li>
-										<li><a href="mobile.html">Samsung Nx</a></li>
-										<li><a href="mobile.html">Printers & Monitors</a></li>
-										<li><a href="mobile.html">Routers</a></li>
-										<li><a href="mobile.html">Data Cards</a></li>
-										<li><a href="mobile.html">Mouse & Keyboard</a></li>
-										<li><a href="mobile.html">Ink Cartridges</a></li>
-									</ul>	
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="col1">
-								<iframe src="https://player.vimeo.com/video/8118831"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-							</div>										
-							</div>
-						  </div>
-						</div></li>
+			    
+				<li><a  href="jsp/products.jsp?category=tgc">tvs, gaming & cameras</a>
+				  </li>
 			
 				
 			  </ul> 
 				</div>
-					<div class="cart box_1">
+			<div class="cart box_1">
 						<a href="checkout.html">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
@@ -302,12 +244,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><a href="javascript:;" class="simpleCart_empty"><img src="images/cart-c.png"  alt=""></a></p>
 						<div class="clearfix"> </div>
 					</div>
-		
 				<div class="clearfix"> </div>
 		</div>
 		</div>
 	</div>
 </div>
+
+
 <!--banner-->
 
 	<div class="banner">
