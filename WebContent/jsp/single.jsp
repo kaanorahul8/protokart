@@ -1,30 +1,31 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+<%@page import="java.io.IOException"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<title>Markito A Ecommerce Category Flat Bootstarp Resposive Website Template | Health :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<title>Protokart</title>
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Markito Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--fonts-->
 <link href='http://fonts.googleapis.com/css?family=Amaranth:400,700' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="../js/move-top.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
 <script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
@@ -34,13 +35,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					});
 				</script>
 <!-- start menu -->
-<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/megamenu.js"></script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<link href="../css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="../js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>			
 
-<script src="js/simpleCart.min.js"> </script>
+
+ <script src="../js/jquery.etalage.min.js"></script> 
+<link rel="stylesheet" href="../css/etalage.css">
+
+		<script>
+			jQuery(document).ready(function($){
+
+				$('#etalage').etalage({
+					thumb_image_width: 300,
+					thumb_image_height: 400,
+					source_image_width: 900,
+					source_image_height: 1200,
+					show_hint: true,
+					click_callback: function(image_anchor, instance_id){
+						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					}
+				});
+
+			});
+		</script>
+
 </head>
+
+
+
 <body> 
+
+
+
 <!--header-->	
 <div class="header" >
 	<div class="top-header" >		
@@ -91,11 +118,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 		<div class="head-top">
 			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" alt="" ></a>
+				<a href="../index.jsp"><img src="../images/logo.png" alt="" ></a>
 			</div>
-			<div class="top-nav">		
+		<div class="top-nav">		
 			  <ul class="megamenu skyblue">
-				      <li class="active grid"><a  href="#">fashion</a>
+				      <li class="active grid"><a  href="products.jsp?category=fashion">fashion</a>
 					    <div class="megapanel">
 						<div class="row">
 							<div class="col1">
@@ -151,7 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  </div>
 						</div>
 					</li>
-					<li><a   href="#">furniture & decor</a>
+					<li><a   href="products.jsp?category=furniture">furniture & decor</a>
 					 <div class="megapanel">
 						<div class="row">
 							<div class="col1">
@@ -188,12 +215,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>	
 								</div>							
 							</div>
-							<div class="col1">
-							<iframe src="https://player.vimeo.com/video/16878818"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-							</div>
 						  </div>
 						</div></li>
-				    <li class="grid"><a  href="#">mobiles & tablets</a>
+				    <li class="grid"><a  href="products.jsp?category=mobiles">mobiles & tablets</a>
 					   <div class="megapanel">
 						<div class="row">
 							<div class="col1">
@@ -230,61 +254,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>	
 								</div>							
 							</div>
-							<div class="col1">
-								<div class="col1">
-								<iframe src="https://player.vimeo.com/video/8118831"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-							</div>										
-							</div>
 						  </div>
 						</div>
 			    </li>
-						 <li class="grid"><a  href="health.html">health & beauty</a>
-					  
+						 <li class="grid"><a  href="products.jsp?category=health">health & beauty</a>					  
 			    </li>		
-				<li><a  href="#">tvs, gaming & cameras</a>
-				  <div class="megapanel">
-						<div class="row">
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="mobile.html">Lenovo Tablets</a></li>
-										<li><a href="mobile.html">Motorola</a></li>
-										<li><a href="mobile.html">Samsung </a></li>
-										<li><a href="mobile.html">Htc Tab</a></li>
-										<li><a href="mobile.html">Dell & Compaq</a></li>
-										<li><a href="mobile.html">Asus Tablets</a></li>
-										<li><a href="mobile.html">Microsoft</a></li>
-										<li><a href="mobile.html">Moto E & Moto G</a></li>
-										<li><a href="mobile.html">Intex</a></li>
-										<li><a href="mobile.html">Hauwei Lumia</a></li>
-										<li><a href="mobile.html">Loungewear</a></li>
-									</ul>	
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="mobile.html">Asus Zenfone 2</a></li>
-										<li><a href="mobile.html">Nikon & Sony</a></li>
-										<li><a href="mobile.html">Shorts</a></li>
-										<li><a href="mobile.html">Olymplus</a></li>
-										<li><a href="mobile.html">Sunglasses</a></li>
-										<li><a href="mobile.html">Samsung Nx</a></li>
-										<li><a href="mobile.html">Printers & Monitors</a></li>
-										<li><a href="mobile.html">Routers</a></li>
-										<li><a href="mobile.html">Data Cards</a></li>
-										<li><a href="mobile.html">Mouse & Keyboard</a></li>
-										<li><a href="mobile.html">Ink Cartridges</a></li>
-									</ul>	
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="col1">
-								<iframe src="https://player.vimeo.com/video/8118831"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-							</div>										
-							</div>
-						  </div>
-						</div></li>
+			    
+				<li><a  href="products.jsp?category=tgc">tvs, gaming & cameras</a>
+				  </li>
 			
 				
 			  </ul> 
@@ -293,9 +270,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="checkout.html">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-							<img src="images/cart.png" alt=""/></h3>
+							<img src="../images/cart.png" alt=""/></h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty"><img src="images/cart-c.png"  alt=""></a></p>
+						<p><a href="javascript:;" class="simpleCart_empty"><img src="../images/cart-c.png"  alt=""></a></p>
 						<div class="clearfix"> </div>
 					</div>
 				<div class="clearfix"> </div>
@@ -303,89 +280,212 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 </div>
-<div class="container">
-		<div class="content-top-blue">
-		<h2 class="new">NEW ARRIVALS</h2>
-			<div class="pink">
-				<div class="col-md-3 blue">	
-					<a href="single.html" > <img src="images/he.jpg" class="img-responsive" alt=""></a>			 	
-					<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-				</div>
-				<div class="col-md-3 blue">		
-					<a href="single.html" > <img src="images/he1.jpg" class="img-responsive" alt=""></a>		 	
-					<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-				</div>
-				<div class="col-md-3 blue">
-					 <a href="single.html" > <img src="images/he2.jpg" class="img-responsive" alt=""></a>		 	
-						<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-				</div>
-				<div class="col-md-3 blue">
-					<a href="single.html" > <img src="images/he3.jpg" class="img-responsive" alt=""></a>			 	
-					<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-				</div>
-				<div class="clearfix"> </div>
-		</div>
-		<div class="pink">
-			<div class="col-md-3 blue">
-				 <a href="single.html" > <img src="images/he4.jpg" class="img-responsive" alt=""></a>		 	
-				<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-			</div>
-			<div class="col-md-3 blue">
-				 <a href="single.html" > <img src="images/he5.jpg" class="img-responsive" alt=""></a>			 	
-				<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-			</div>
-			<div class="col-md-3 blue">
-				<a href="single.html" > <img src="images/he.jpg" class="img-responsive" alt=""></a>	 	
-				<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-			</div>
-			<div class="col-md-3 blue">
-				<a href="single.html" > <img src="images/he1.jpg" class="img-responsive" alt=""></a>		 	
-				<!---->
-						<div class="grid_1 simpleCart_shelfItem">
-							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
-						</div>
-					<!---->
-			</div>
-				<div class="clearfix"> </div>
-		</div>
-	</div>
-		<!---->
 
-</div>
+
+
+	<div class="container">
+	
+		<div class="single" >
+		
+			<%
+					
+					String productid =  request.getParameter("productid");
+					
+					Class.forName("com.mysql.jdbc.Driver");
+			
+					
+					Connection conn  = DriverManager.getConnection("jdbc:mysql://localhost:3306/protokart","root","");
+					
+					PreparedStatement statement = conn.prepareStatement("select * from products where product_id='"+productid+"'");
+					
+					ResultSet result = statement.executeQuery();
+					
+					
+					while(result.next())
+					{
+		
+		
+					
+					
+			%>
+		
+								<div class="col-md-9 top-in-single" style="padding-top:40px;">
+								
+								
+									<div class="col-md-5 single-top">	
+										<ul id="etalage">
+											<li>
+												<a href="optionallink.html">
+													<img id="etalage" class="etalage_thumb_image img-responsive" src="../images/<%out.println(result.getString(8));%>" alt="" >
+													<img class="etalage_source_image img-responsive" src="../images/<%out.println(result.getString(8));%>" alt="" >
+												</a>
+											</li>
+										</ul>
+				
+									</div>	
+									
+									
+									
+									<div class="col-md-7 single-top-in">
+										<div class="single-para">
+											<h4><%out.println(result.getString(2));%></h4>
+											<p><%out.println(result.getString(5));%></p>
+											<div class="star-on">
+												<ul>
+													<li><a href="#"><i> </i></a></li>
+													<li><a href="#"><i> </i></a></li>
+													<li><a href="#"><i> </i></a></li>
+													<li><a href="#"><i> </i></a></li>
+													<li><a href="#"><i> </i></a></li>
+												</ul>
+												<div class="review">
+													<a href="#"> 3 reviews </a>/
+													<a href="#">  Write a review</a>
+												</div>
+											<div class="clearfix"> </div>
+											</div>
+											
+												<label  class="add-to">Rs. <%out.println(result.getString(3));%></label>
+											
+											<div class="available">
+												<h6>Available Options :</h6>
+												<ul>
+													
+												<li>Size:<select>
+													<option>Large</option>
+													<option>Medium</option>
+													<option>small</option>
+													<option>Large</option>
+													<option>small</option>
+												</select></li>
+												<li>Cost:
+														<select>
+														<option>U.S.Dollar</option>
+														<option>Euro</option>
+													</select></li>
+											</ul>
+										</div>
+											
+											<a href="#" class="cart ">More details</a>
+											
+										</div>
+									</div>
+								<div class="clearfix"> </div>
+								  <!----- tabs-box ---->
+						<div class="sap_tabs">	
+								     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+										  <ul class="resp-tabs-list">
+										  	  <li class="resp-tab-item "><span>Product Reviews</span></li>
+											  <div class="clearfix"></div>
+										  </ul>				  	 
+											<div class="resp-tabs-container">
+											    <h2 class="resp-accordion resp-tab-active"><span class="resp-arrow"></span>Product Description</h2>
+											    	<div class="tab-1 resp-tab-content resp-tab-content-active" style="display:block">
+													<div class="facts">
+													  <p > <%out.println(result.getString(10));%></p>       
+											        </div>
+											    	</div>
+											      
+									      </div>
+									 </div>
+				</div>
+								</div>
+								<div class="col-md-3 at-single">
+									<div class="single-bottom">
+										<h4>Brands</h4>
+										<ul>
+										<li>
+											<input type="checkbox"  id="brand" value="">
+											<label for="brand"><span></span> Contrary belief</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="brand1" value="">
+											<label for="brand1"><span></span> Lorem Ipsum</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="brand2" value="">
+											<label for="brand2"><span></span> Fusce feugiat</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="brand3" value="">
+											<label for="brand3"><span></span> Contrary belief</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="brand4" value="">
+											<label for="brand4"><span></span>Injected humour</label>
+										</li>
+										</ul>
+									</div>
+									<div class="single-bottom">
+										<h4>Colors</h4>
+										<ul>
+										<li>
+											<input type="checkbox"  id="color" value="">
+											<label for="color"><span></span> Red</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="color1" value="">
+											<label for="color1"><span></span> Blue</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="color2" value="">
+											<label for="color2"><span></span> Black</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="color3" value="">
+											<label for="color3"><span></span> White</label>
+										</li>
+										<li>
+											<input type="checkbox"  id="color4" value="">
+											<label for="color4"><span></span>Green</label>
+										</li>
+										</ul>
+									</div>
+									
+									
+									<div class="single-bottom">
+										<h4>Product Categories</h4>
+										
+										<%
+										
+										String category = result.getString(6);
+										PreparedStatement statement2 = conn.prepareStatement("select * from products where categ='"+category+"' limit 2");
+										
+										ResultSet result2 = statement2.executeQuery();
+										
+										while(result2.next())
+										{
+											%>
+											<div class="product-go">
+												<img class="img-responsive fashion" src="../images/<%out.println(result2.getString(8));%>" alt="">
+											<div class="grid-product">
+												<a href="single.jsp?productid=<% out.println(result2.getString(1));%>" class="elit"><%out.println(result2.getString(2));%></a>
+												<span>Rs. <%out.println(result2.getString(3));%></span>
+											</div>
+											<div class="clearfix"> </div>
+										<%} %>
+											
+								</div>
+								</div>
+								<div class="clearfix"> </div>		
+								
+			<%
+			}
+			%>					
+								
+			</div>
+			<!---->	
+	</div>
+
+
+
+
 	<!--footer-->
 	<div class="footer">
 		<div class="container">
 			<div class="col-md-3 footer-left">
-				<a href="index.html"><img src="images/logo.png" alt=""></a>
-				<p class="footer-class">Â© 2015 Markito All Rights Reserved | Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+				<a href="index.html"><img src="../images/logo.png" alt=""></a>
+				<p class="footer-class">© 2015 Markito All Rights Reserved | Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 			</div>
 			<div class="col-md-2 footer-middle">
 				<ul>
@@ -421,14 +521,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<script type="text/javascript">
 						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear' 
-					 		};
-							*/
+							
 							
 							$().UItoTop({ easingType: 'easeOutQuart' });
 							
