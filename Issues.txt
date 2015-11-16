@@ -1,0 +1,2 @@
+1. Directly opening login/signup jsp files causes an error.
+2.
