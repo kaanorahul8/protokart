@@ -1,5 +1,5 @@
 # protokart
-Online shopping web app
+Online Shopping web app
 
 This is a simple dynamic web application which provides the users with an interface to shop  products online.
 
